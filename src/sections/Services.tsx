@@ -21,7 +21,7 @@ export const Services: React.FC = () => {
       color: 'bg-indigo-50 text-indigo-600 border-indigo-100',
     },
     {
-      title: 'MERN Stack Development',
+      title: 'React & Full-Stack Development',
       desc: 'Architecting secure and scalable full-stack web applications with Node.js, Express.js, MongoDB, and React following RESTful API patterns.',
       icon: Database,
       color: 'bg-emerald-50 text-emerald-600 border-emerald-100',
@@ -49,7 +49,7 @@ export const Services: React.FC = () => {
   return (
     <section id="services" className="py-20 bg-slate-50/50" ref={containerRef}>
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Title */}
         <div className="flex flex-col items-center mb-16 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-primary mb-2">

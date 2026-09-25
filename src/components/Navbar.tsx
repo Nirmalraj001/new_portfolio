@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from './Logo';
 import { cn } from '../utils/cn';
 
-export const NAV_LINKS = [
+const NAV_LINKS = [
   { label: 'Home', href: '#home', id: 'home' },
   { label: 'About', href: '#about', id: 'about' },
   { label: 'Skills', href: '#skills', id: 'skills' },
@@ -21,25 +21,33 @@ export const Navbar: React.FC = () => {
 
   // Monitor scrolling to add drop-shadow/border and spy on active section
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+    let ticking = false;
 
-      // Scroll Spy logic
-      const scrollPosition = window.scrollY + 200;
-      for (const link of NAV_LINKS) {
-        const el = document.getElementById(link.id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(link.id);
-            break;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+
+          // Scroll Spy logic
+          const scrollPosition = window.scrollY + 200;
+          for (const link of NAV_LINKS) {
+            const el = document.getElementById(link.id);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < top + height) {
+                setActiveSection(link.id);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

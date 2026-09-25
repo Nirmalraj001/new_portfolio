@@ -9,15 +9,16 @@ export interface Job {
 
 export interface Project {
   title: string;
-  subtitle: string;
-  problemStatement: string;
-  solution: string;
-  keyContributions: string[];
-  features: string[];
-  businessValue: string;
+  description: string;
   techStack: string[];
-  githubUrl?: string;
   liveUrl?: string;
+  githubUrl?: string;
+  subtitle?: string;
+  problemStatement?: string;
+  solution?: string;
+  keyContributions?: string[];
+  features?: string[];
+  businessValue?: string;
 }
 
 export interface SkillCategory {
@@ -46,11 +47,11 @@ export interface ResumeData {
 
 export const resumeData: ResumeData = {
   name: "Nirmal Raj P",
-  title: "MERN Stack Developer | Frontend Developer",
+  title: "React Developer | Frontend Developer",
   location: "Chennai, Tamil Nadu, India",
   phone: "+91 9360147391",
-  email: "rajnirmal1622@gmail.com",
-  summary: "MERN Stack Developer with 4+ years of experience building scalable, high-performance web applications using MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript, and JavaScript (ES6+). Experienced in designing and developing end-to-end applications, RESTful APIs, reusable component libraries, complex admin dashboards, and responsive user interfaces. Skilled in frontend architecture, backend development, database design, TanStack React Query, state management, authentication, and performance optimization. Passionate about writing clean, maintainable code and delivering scalable enterprise solutions using modern web development best practices.",
+  email: "nirmalraj1628@gmail.com",
+  summary: "React Developer with 5 years of experience building scalable, high-performance web applications using MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript, and JavaScript (ES6+). Experienced in designing and developing end-to-end applications, RESTful APIs, reusable component libraries, complex admin dashboards, and responsive user interfaces. Skilled in frontend architecture, backend development, database design, TanStack React Query, state management, authentication, and performance optimization. Passionate about writing clean, maintainable code and delivering scalable enterprise solutions using modern web development best practices.",
 
   skills: [
     {
@@ -115,7 +116,7 @@ export const resumeData: ResumeData = {
       techStack: ["React.js", "Next.js", "TypeScript", "TanStack React Query", "Axios", "RESTful APIs", "Git"]
     },
     {
-      role: "Software Engineer | MERN Stack Developer",
+      role: "Software Engineer | React Developer",
       company: "Colan Infotech Pvt Ltd",
       duration: "May 2024 - Jan 2025",
       responsibilities: [
@@ -143,100 +144,32 @@ export const resumeData: ResumeData = {
   projects: [
     {
       title: "PASS Admin Panel",
-      subtitle: "Ride, Delivery & Mall",
-      problemStatement: "Handling complex, data-heavy operations with multiple users.",
-      solution: "Developed a centralized enterprise admin platform to manage Ride, Delivery, and Mall operations.",
-      keyContributions: [
-        "Developed a centralized enterprise admin platform to manage Ride, Delivery, and Mall operations.",
-        "Built scalable admin modules, advanced data tables, dynamic filters, forms, and reusable UI components using React.js, Next.js, and TypeScript.",
-        "Integrated RESTful APIs and TanStack React Query for efficient data fetching, caching, query invalidation, and server-state synchronization.",
-        "Built responsive admin dashboards designed to support complex operational workflows."
-      ],
-      features: [
-        "Centralized operations management modules",
-        "Advanced data tables and filters",
-        "Efficient API cache synchronization",
-        "Role-based control flows"
-      ],
-      businessValue: "Improved data accessibility and dashboard speed for operations management teams.",
-      techStack: ["React.js", "Next.js", "TypeScript", "TanStack React Query", "RESTful APIs", "Tailwind CSS", "GitLab"]
+      description: "Centralized enterprise operations platform managing Ride, Delivery, and Mall workflows with real-time data tables, dynamic filters, and API cache synchronization.",
+      techStack: ["React.js", "Next.js", "TypeScript", "TanStack React Query", "Tailwind CSS", "GitLab"],
+      liveUrl: "https://pass.global"
     },
     {
       title: "Quattro",
-      subtitle: "Planning & Reporting",
-      problemStatement: "Analyzing cross-channel performance and rendering high-volume data dynamically.",
-      solution: "Developed key frontend modules for an enterprise marketing analytics and planning platform used to monitor campaign performance across multiple channels.",
-      keyContributions: [
-        "Developed key frontend modules for an enterprise marketing analytics and planning platform used to monitor campaign performance across multiple channels.",
-        "Integrated Sisense BI to fetch, process, and visualize large analytics datasets.",
-        "Built React-based dashboards for performance reporting, trend analysis, and KPI tracking.",
-        "Developed planning workflows that enabled organizations to create, manage, and optimize marketing campaign strategies.",
-        "Collaborated with engineering teams to improve frontend maintainability and application performance."
-      ],
-      features: [
-        "Sisense BI visualizations integration",
-        "Trend analysis & KPI reporting charts",
-        "Planning campaign workflow editors"
-      ],
-      businessValue: "Enabled marketing managers to visualize cross-channel data and plan campaigns effectively.",
-      techStack: ["React.js", "Next.js", "TypeScript", "Axios", "RESTful APIs", "Horizon React Components"]
+      description: "Enterprise marketing analytics and campaign planning dashboard integrating Sisense BI visualizations, cross-channel performance reporting, and KPI tracking.",
+      techStack: ["React.js", "Next.js", "TypeScript", "Axios", "RESTful APIs", "Sisense BI"]
     },
     {
       title: "Horizon React Component Library",
-      subtitle: "Custom UI Package",
-      problemStatement: "Maintaining UI consistency and preventing code replication across enterprise projects.",
-      solution: "Contributed to the development and enhancement of an enterprise React component library used across multiple frontend applications.",
-      keyContributions: [
-        "Contributed to the development and enhancement of an enterprise React component library used across multiple frontend applications.",
-        "Built reusable and modular UI components using React.js, TypeScript, Mantine UI, and SCSS.",
-        "Developed and maintained component documentation and UI examples using Storybook.",
-        "Refactored existing components to improve maintainability, performance, and theme compatibility."
-      ],
-      features: [
-        "Dozens of accessible, dynamic UI components",
-        "Comprehensive theme configs",
-        "Storybook playgrounds and documentation"
-      ],
-      businessValue: "Accelerated frontend developers' feature delivery speed and standardized design tokens across corporate websites.",
-      techStack: ["React.js", "TypeScript", "Mantine UI", "Storybook", "npm", "SCSS"]
+      description: "Modular enterprise UI component library and design system built with TypeScript, Mantine UI, and SCSS, fully documented and tested with Storybook.",
+      techStack: ["React.js", "TypeScript", "Mantine UI", "Storybook", "npm", "SCSS"],
+      liveUrl: "https://www.npmjs.com/package/@rcigroup/horizon-component-sdk"
     },
     {
       title: "Kreon Financial Service",
-      subtitle: "Employee Benefits & Loans",
-      problemStatement: "Providing user-friendly multi-step loan applications with role workflows.",
-      solution: "Developed a React-based financial platform that enabled employees to apply for loans through their organizations.",
-      keyContributions: [
-        "Developed a React-based financial platform that enabled employees to apply for loans through their organizations.",
-        "Implemented role-based user interfaces to support employees and organizational users.",
-        "Integrated RESTful APIs for loan application, approval, and financial workflow management.",
-        "Developed responsive interfaces focused on usability and maintainable frontend architecture."
-      ],
-      features: [
-        "Multi-role user flows",
-        "Loan request application wizards",
-        "Dynamic progress status indicators"
-      ],
-      businessValue: "Streamlined corporate loan applications for employees and increased HR processing velocity.",
-      techStack: ["React.js", "TypeScript", "Redux", "RESTful APIs", "Material UI", "Axios"]
+      description: "Employee corporate loan benefits portal featuring secure multi-role application workflows, approval wizards, and integrated financial RESTful services.",
+      techStack: ["React.js", "TypeScript", "Redux", "Material UI", "Axios", "RESTful APIs"],
+      liveUrl: "https://www.kreon.in/"
     },
     {
       title: "Neoswap Token Bridge",
-      subtitle: "Cross-Chain Token Swap",
-      problemStatement: "Enabling secure token transfers and swap tracking between blockchain networks.",
-      solution: "Developed a token bridge feature for a cryptocurrency exchange platform using React.js.",
-      keyContributions: [
-        "Developed a token bridge feature for a cryptocurrency exchange platform using React.js.",
-        "Built frontend workflows to enable token transfers between blockchain networks.",
-        "Implemented transaction monitoring and real-time status updates for cross-chain transfers.",
-        "Integrated Web3 functionality and RESTful APIs for blockchain transaction workflows."
-      ],
-      features: [
-        "Cross-chain transfer triggers",
-        "Real-time transaction status displays",
-        "Web3 contract api links"
-      ],
-      businessValue: "Successfully launched the swap bridge interface, providing secure transfers and zero client-side swap discrepancies.",
-      techStack: ["React.js", "JavaScript", "Redux", "Web3.js", "RESTful APIs", "HTML5", "CSS3", "Bootstrap"]
+      description: "Cross-chain cryptocurrency token swap and bridge interface featuring Web3 wallet connectivity, real-time transaction monitoring, and multi-network transfers.",
+      techStack: ["React.js", "JavaScript", "Redux", "Web3.js", "RESTful APIs", "Bootstrap"],
+      liveUrl: "https://xbridge.neo.org/"
     }
   ],
 

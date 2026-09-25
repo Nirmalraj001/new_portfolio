@@ -20,7 +20,7 @@ export const Logo: React.FC<LogoProps> = ({ className = '', showSubtitle = true 
         </span>
         {showSubtitle && (
           <span className="text-[10px] text-slate-500 font-medium tracking-wide mt-1 leading-none">
-            MERN Stack Developer
+            React Developer
           </span>
         )}
       </div>

@@ -8,17 +8,13 @@ import { Experience } from './sections/Experience';
 import { Projects } from './sections/Projects';
 import { Contact } from './sections/Contact';
 import { Footer } from './components/Footer';
-import { NotFoundPage, OfflinePage, LoadingSkeleton } from './components/ErrorPages';
+import { NotFoundPage, OfflinePage } from './components/ErrorPages';
 
 function App() {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [isLoading, setIsLoading] = useState(true);
   const [path, setPath] = useState(window.location.pathname);
 
   useEffect(() => {
-    // Simulate initial loading skeleton to optimize Cumulative Layout Shift (CLS)
-    const loadTimer = setTimeout(() => setIsLoading(false), 500);
-
     const handleOnline = () => setIsOnline(true);
     const handleOffline = () => setIsOnline(false);
     
@@ -32,7 +28,6 @@ function App() {
     window.addEventListener('popstate', handleLocationChange);
 
     return () => {
-      clearTimeout(loadTimer);
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
       window.removeEventListener('popstate', handleLocationChange);
@@ -42,11 +37,6 @@ function App() {
   // Offline Fallback
   if (!isOnline) {
     return <OfflinePage />;
-  }
-
-  // Initial Loading Skeleton
-  if (isLoading) {
-    return <LoadingSkeleton />;
   }
 
   // Client-side Routing Fallback (for 404 Pages on direct URL access)

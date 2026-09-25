@@ -8,7 +8,7 @@ export const About: React.FC = () => {
   const isInView = useInView(containerRef, { once: true, amount: 0.2 });
 
   // Count up animations
-  const expCount = useCountUp(4, 1500, isInView);
+  const expCount = useCountUp(5, 1500, isInView);
   const projCount = useCountUp(10, 1500, isInView);
   const compCount = useCountUp(4, 1500, isInView);
   const satCount = useCountUp(100, 1500, isInView);
@@ -67,7 +67,7 @@ export const About: React.FC = () => {
           className="w-full bg-white border border-slate-200/60 rounded-3xl p-8 sm:p-12 shadow-[0_10px_40px_rgba(99,102,241,0.02)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Column: Biography */}
             <div className="lg:col-span-7 flex flex-col items-start text-left">
               <div className="flex items-center gap-2 mb-4">
@@ -78,12 +78,12 @@ export const About: React.FC = () => {
               </div>
 
               <h3 className="font-display font-bold text-2xl text-slate-900 mb-6 leading-snug">
-                MERN Stack Developer & Frontend Architect
+                React Developer & Frontend Architect
               </h3>
 
               <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
                 <p>
-                  Frontend Developer with 4+ years of professional experience building scalable, high-performance web applications using React.js, Next.js, TypeScript, and Node.js.
+                  Frontend Developer with 5 years of professional experience building scalable, high-performance web applications using React.js, Next.js, TypeScript, and Node.js.
                 </p>
                 <p>
                   I specialize in structuring clean component architectures, implementing robust state management systems (Zustand, Redux, React Query), and building responsive enterprise dashboards.

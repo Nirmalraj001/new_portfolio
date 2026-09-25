@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
             variants={itemVariants}
             className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl mb-8 font-medium"
           >
-            MERN Stack Developer with 4+ years of experience building scalable, high-performance web applications using MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript, and JavaScript (ES6+). Passionate about writing clean, maintainable code.
+            React Developer with 5 years of experience building scalable, high-performance web applications using MongoDB, Express.js, React.js, Node.js, Next.js, TypeScript, and JavaScript (ES6+). Passionate about writing clean, maintainable code.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -177,7 +177,7 @@ export const Hero: React.FC = () => {
                 <Star size={16} fill="currentColor" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xs font-extrabold text-slate-800 leading-none">4+ Years</span>
+                <span className="text-xs font-extrabold text-slate-800 leading-none">5 Years</span>
                 <span className="text-[10px] text-slate-400 font-semibold tracking-wide mt-1">Experience</span>
               </div>
             </motion.div>

@@ -8,17 +8,24 @@ export const useCountUp = (end: number, duration: number = 1500, trigger: boolea
     if (!trigger || hasRun.current) return;
 
     let startTimestamp: number | null = null;
+    let animationFrameId: number;
     const step = (timestamp: number) => {
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       setCount(Math.floor(progress * end));
       if (progress < 1) {
-        window.requestAnimationFrame(step);
+        animationFrameId = window.requestAnimationFrame(step);
       } else {
         hasRun.current = true;
       }
     };
-    window.requestAnimationFrame(step);
+    animationFrameId = window.requestAnimationFrame(step);
+
+    return () => {
+      if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+      }
+    };
   }, [end, duration, trigger]);
 
   return count;
